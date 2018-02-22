@@ -17,37 +17,539 @@ import { TimepickerPo } from '../support/timepicker.po';
 import { TooltipPo } from '../support/tooltip.po';
 import { TypeaheadPo } from '../support/typeahead.po';
 
+// describe('Content displaying test suite', () => {
+//   describe('Accordion Content section', () => {
+//     const accordion = new AccordionPo();
+//
+//     beforeEach(() => accordion.navigateTo());
+//
+//     it('page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to accordion component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', accordion.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', accordion.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', accordion.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Alerts Content section', () => {
+//     const alerts = new AlertsPo();
+//
+//     beforeEach(() => alerts.navigateTo());
+//
+//     it('page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to alert component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', alerts.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', alerts.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', alerts.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Buttons Content section', () => {
+//     const buttons = new ButtonsPo();
+//
+//     beforeEach(() => buttons.navigateTo());
+//
+//     it('buttons page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to button component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', buttons.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', buttons.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', buttons.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Carousel Content section', () => {
+//     const carousel = new CarouselPo();
+//
+//     beforeEach(() => carousel.navigateTo());
+//
+//     it('page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to carousel component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', carousel.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', carousel.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', carousel.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Collapse Content section', () => {
+//     const collapse = new CollapsePo();
+//
+//     beforeEach(() => collapse.navigateTo());
+//
+//     it('collapse page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to collapse component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', collapse.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', collapse.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', collapse.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Datepicker Content section', () => {
+//     const datepicker = new DatepickerPo();
+//
+//     beforeEach(() => datepicker.navigateTo());
+//
+//     it('datepicker page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to datepicker component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', datepicker.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', datepicker.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', datepicker.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Dropdown Content section', () => {
+//     const dropdowns = new DropdownsPo();
+//
+//     beforeEach(() => dropdowns.navigateTo());
+//
+//     it('dropdowns page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to dropdown component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', dropdowns.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', dropdowns.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', dropdowns.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Modals Content section', () => {
+//     const modals = new ModalsPo();
+//
+//     beforeEach(() => modals.navigateTo());
+//
+//     it('modals page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to modals component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', modals.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', modals.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', modals.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Pagination Content section', () => {
+//     const pagination = new PaginationPo();
+//
+//     beforeEach(() => pagination.navigateTo());
+//
+//     it('pagination page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('pagination header contains title and link to carousel component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', pagination.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', pagination.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', pagination.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Popover Content section', () => {
+//     const popover = new PopoverPo();
+//
+//     beforeEach(() => popover.navigateTo());
+//
+//     it('popover page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to popover component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', popover.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', popover.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', popover.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Progressbar Content section', () => {
+//     const progressbar = new ProgressbarPo();
+//
+//     beforeEach(() => progressbar.navigateTo());
+//
+//     it('progressbar page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to progressbar component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', progressbar.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', progressbar.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', progressbar.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Rating Content section', () => {
+//     const rating = new RatingPo();
+//
+//     beforeEach(() => rating.navigateTo());
+//
+//     it('rating page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to rating component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', rating.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', rating.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', rating.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Sortable Content section', () => {
+//     const sortable = new SortablePo();
+//
+//     beforeEach(() => sortable.navigateTo());
+//
+//     it('sortable page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to sortable component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', sortable.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', sortable.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', sortable.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Tabs Content section', () => {
+//     const tabs = new TabsPo();
+//
+//     beforeEach(() => tabs.navigateTo());
+//
+//     it('tabs page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to tabs component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', tabs.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', tabs.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', tabs.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Timepicker Content section', () => {
+//     const timepicker = new TimepickerPo();
+//
+//     beforeEach(() => timepicker.navigateTo());
+//
+//     it('timepicker page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to timepicker component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', timepicker.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', timepicker.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', timepicker.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Tooltip Content section', () => {
+//     const tooltip = new TooltipPo();
+//
+//     beforeEach(() => tooltip.navigateTo());
+//
+//     it('tooltip page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to tooltip component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', tooltip.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', tooltip.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', tooltip.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+//
+//   describe('Typeahead Content section', () => {
+//     const typeahead = new TypeaheadPo();
+//
+//     beforeEach(() => typeahead.navigateTo());
+//
+//     it('typeahead page loads and displays it\'s content', () => {
+//       cy.get('.content')
+//         .should('be.visible');
+//     });
+//
+//     it('content header contains title and link to typeahead component at github', () => {
+//       cy.get('.content-header').children('h1').as('title')
+//         .should('be.visible')
+//         .and('to.contain', typeahead.pageTitle);
+//
+//       cy.get('@title').children('a')
+//         .should('be.enabled')
+//         .and('have.attr', 'href', typeahead.ghLinkToComponent);
+//     });
+//
+//     it('usage code example is displayed at demo top section', () => {
+//       cy.get('demo-top-section').as('demoTop').children('h2')
+//         .should('be.visible')
+//         .and('to.contain', typeahead.titleDefaultExample);
+//
+//       cy.get('@demoTop').children('.prettyprint')
+//         .should('be.visible')
+//         .and('not.to.be.empty');
+//     });
+//   });
+// });
+
 describe('Accordion page test suite', () => {
   const accordion = new AccordionPo();
 
   beforeEach(() => accordion.navigateTo());
-
-  describe('Content section', () => {
-    it('page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to accordion component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', accordion.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', accordion.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', accordion.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Simple accordion', () => {
     const basicDemo = accordion.exampleDemosArr.basic;
@@ -217,33 +719,6 @@ describe('Alerts page test suite', () => {
 
   beforeEach(() => alerts.navigateTo());
 
-  describe('Content section', () => {
-    it('page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to alert component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', alerts.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', alerts.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', alerts.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Basic alert', () => {
     const basicDemo = alerts.exampleDemosArr.basic;
 
@@ -263,11 +738,16 @@ describe('Alerts page test suite', () => {
   describe('Link color', () => {
     const linkDemo = alerts.exampleDemosArr.link;
 
+    alertTypes = [
+      'alert-success',
+      'alert-info',
+      'alert-warning',
+      'alert-danger'
+    ];
+
     it('links can be provided by class alert-link', () => {
-      cy.get(linkDemo).find('div').as('alertsLink').each(() => {
-        cy.get('@alertsLink').find(alerts.linkClass)
-          .should('have.attr', 'href', '#');
-      });
+      alertTypes.forEach(type => cy.get(`${ linkDemo } .${ type }`).find(alerts.linkClass)
+        .should('have.attr', 'href', '#'));
     });
   });
 
@@ -277,25 +757,32 @@ describe('Alerts page test suite', () => {
     it('alert with additional content contains html elements', () => {
       cy.get(contentDemo).find('div')
         .should('to.have.descendants', 'h4')
-        .and('to.have.descendants', 'p');
+        .and('to.have.descendants', 'p')
+        .and('to.have.descendants', alerts.heading);
     });
   });
 
   describe('Dismissing alert', () => {
     const dismissingDemo = alerts.exampleDemosArr.dismissing;
 
+    alertTypes = [
+      'alert-success',
+      'alert-info',
+      'alert-danger'
+    ];
+
     it('alerts can stop being dismissible', () => {
-      cy.get(dismissingDemo).find('alert').as('dismissAlert').last()
-        .should('to.have.descendants', '.close');
+      cy.get(dismissingDemo).find('alert').last().as('dismissAlert')
+        .should('to.have.descendants', alerts.dismissOption);
 
       alerts.clickByText(dismissingDemo, alerts.buttonToggler);
-      cy.get('@dismissAlert').last()
-        .should('not.to.have.descendants', '.close');
+      cy.get('@dismissAlert')
+        .should('not.to.have.descendants', alerts.dismissOption);
     });
 
     it('alerts can all be closed and then resetting to default state', () => {
       cy.get(dismissingDemo).find('alert').as('dismissAlert').each($alert => {
-        $alert.find('.close').click();
+        $alert.find(alerts.dismissOption).click();
       });
 
       cy.get('@dismissAlert')
@@ -399,33 +886,6 @@ describe('Buttons page test suite', () => {
   const buttonOutput = ['left', 'middle', 'right'];
 
   beforeEach(() => buttons.navigateTo());
-
-  describe('Content section', () => {
-    it('buttons page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to button component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', buttons.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', buttons.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', buttons.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Single button', () => {
     const singleBtn = buttons.exampleDemosArr.basic;
@@ -545,33 +1005,6 @@ describe('Carousel page test suite', () => {
 
   beforeEach(() => carousel.navigateTo());
 
-  describe('Content section', () => {
-    it('page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to carousel component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', carousel.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', carousel.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', carousel.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Basic demo', () => {
     const basic = carousel.exampleDemosArr.basic;
 
@@ -589,33 +1022,6 @@ describe('Collapse demo page test suite', () => {
   const collapse = new CollapsePo();
 
   beforeEach(() => collapse.navigateTo());
-
-  describe('Content section', () => {
-    it('collapse page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to collapse component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', collapse.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', collapse.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', collapse.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Basic demo', () => {
     const basic = collapse.exampleDemosArr.basic;
@@ -638,33 +1044,6 @@ describe('Datepicker demo page test suite', () => {
   const datepicker = new DatepickerPo();
 
   beforeEach(() => datepicker.navigateTo());
-
-  describe('Content section', () => {
-    it('datepicker page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to datepicker component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', datepicker.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', datepicker.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', datepicker.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Basic demo', () => {
     const basic = datepicker.exampleDemosArr.basic;
@@ -712,33 +1091,6 @@ describe('Dropdowns demo page test suite', () => {
   const dropdowns = new DropdownsPo();
 
   beforeEach(() => dropdowns.navigateTo());
-
-  describe('Content section', () => {
-    it('dropdowns page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to dropdown component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', dropdowns.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', dropdowns.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', dropdowns.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Single button dropdowns', () => {
     const singleBtn = dropdowns.exampleDemosArr.singleButton;
@@ -879,33 +1231,6 @@ describe('Modals demo page test suite', () => {
 
   beforeEach(() => modals.navigateTo());
 
-  describe('Content section', () => {
-    it('modals page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to modals component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', modals.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', modals.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', modals.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Service examples', () => {
 
     describe('Template modal', () => {
@@ -983,33 +1308,6 @@ describe('Pagination demo page test suite', () => {
 
   beforeEach(() => pagination.navigateTo());
 
-  describe('Content section', () => {
-    it('pagination page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('pagination header contains title and link to carousel component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', pagination.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', pagination.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', pagination.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Pager example', () => {
     const pager = pagination.exampleDemosArr.pager;
 
@@ -1033,33 +1331,6 @@ describe('Popover demo page test suite', () => {
 
   beforeEach(() => popover.navigateTo());
 
-  describe('Content section', () => {
-    it('popover page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to popover component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', popover.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', popover.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', popover.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Basic popover', () => {
     const basicPopover = popover.exampleDemosArr.basic;
 
@@ -1076,33 +1347,6 @@ describe('Progressbar demo page test suite', () => {
   const progressbar = new ProgressbarPo();
 
   beforeEach(() => progressbar.navigateTo());
-
-  describe('Content section', () => {
-    it('progressbar page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to progressbar component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', progressbar.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', progressbar.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', progressbar.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Configuring defaults', () => {
     const configured = progressbar.exampleDemosArr.config;
@@ -1126,33 +1370,6 @@ describe('Rating demo page test suite', () => {
 
   beforeEach(() => rating.navigateTo());
 
-  describe('Content section', () => {
-    it('rating page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to rating component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', rating.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', rating.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', rating.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Basic example', () => {
     const basic = rating.exampleDemosArr.basic;
 
@@ -1175,33 +1392,6 @@ describe('Sortable demo page test suite', () => {
 
   beforeEach(() => sortable.navigateTo());
 
-  describe('Content section', () => {
-    it('sortable page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to sortable component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', sortable.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', sortable.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', sortable.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('String items', () => {
     const stringItem = sortable.exampleDemosArr.stringItems;
 
@@ -1218,33 +1408,6 @@ describe('Tabs demo page spec', () => {
   const tabs = new TabsPo();
 
   beforeEach(() => tabs.navigateTo());
-
-  describe('Content section', () => {
-    it('tabs page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to tabs component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', tabs.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', tabs.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', tabs.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Configuring defaults', () => {
     const configDemo = tabs.exampleDemosArr.config;
@@ -1269,33 +1432,6 @@ describe('Timepicker demo page test suite', () => {
 
   beforeEach(() => timepicker.navigateTo());
 
-  describe('Content section', () => {
-    it('timepicker page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to timepicker component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', timepicker.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', timepicker.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', timepicker.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Meridian example', () => {
     const meridian = timepicker.exampleDemosArr.meridian;
     const togglerText = '12H / 24H';
@@ -1315,33 +1451,6 @@ describe('Tooltip demo page test suite', () => {
 
   beforeEach(() => tooltip.navigateTo());
 
-  describe('Content section', () => {
-    it('tooltip page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to tooltip component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', tooltip.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', tooltip.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', tooltip.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
-
   describe('Basic tooltip', () => {
     const basic = tooltip.exampleDemosArr.basic;
 
@@ -1357,33 +1466,6 @@ describe('Typeahead demo page test suite', () => {
   const typeahead = new TypeaheadPo();
 
   beforeEach(() => typeahead.navigateTo());
-
-  describe('Content section', () => {
-    it('typeahead page loads and displays it\'s content', () => {
-      cy.get('.content')
-        .should('be.visible');
-    });
-
-    it('content header contains title and link to typeahead component at github', () => {
-      cy.get('.content-header').children('h1').as('title')
-        .should('be.visible')
-        .and('to.contain', typeahead.pageTitle);
-
-      cy.get('@title').children('a')
-        .should('be.enabled')
-        .and('have.attr', 'href', typeahead.ghLinkToComponent);
-    });
-
-    it('usage code example is displayed at demo top section', () => {
-      cy.get('demo-top-section').as('demoTop').children('h2')
-        .should('be.visible')
-        .and('to.contain', typeahead.titleDefaultExample);
-
-      cy.get('@demoTop').children('.prettyprint')
-        .should('be.visible')
-        .and('not.to.be.empty');
-    });
-  });
 
   describe('Reactive forms', () => {
     const reactiveForm = typeahead.exampleDemosArr.reactiveForms;
